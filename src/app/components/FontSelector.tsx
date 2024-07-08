@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setFont } from "../store/fontSlice";
-import { RootState } from "../store";
+import { setFont } from "@/app/store/fontSlice";
+import { RootState } from "@/lib/redux";
 
 const FontSelector: React.FC = () => {
   const dispatch = useDispatch();
