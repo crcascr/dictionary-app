@@ -1,34 +1,47 @@
 import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
 import axios from "axios";
 
+interface Phonetic {
+  text?: string;
+  audio: string;
+}
+
+interface Meaning {
+  partOfSpeech: string;
+  definitions: {
+    definition: string;
+    example?: string;
+  }[];
+}
+
 interface DictionaryState {
   word: string;
-  definitions: any[];
+  phonetics: Phonetic[];
+  meanings: Meaning[];
   loading: boolean;
   error: string | null;
   searchHistory: { word: string; timestamp: number }[];
 }
 
 const initialState: DictionaryState = {
-  word: "",
-  definitions: [],
+  word: '',
+  phonetics: [],
+  meanings: [],
   loading: false,
   error: null,
   searchHistory: [],
 };
 
 export const searchWord = createAsyncThunk(
-  "dictionary/searchWord",
+  'dictionary/searchWord',
   async (word: string) => {
-    const response = await axios.get(
-      `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`
-    );
-    return response.data;
+    const response = await axios.get(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`);
+    return response.data[0]; // Assuming we're always using the first result
   }
 );
 
 const dictionarySlice = createSlice({
-  name: "dictionary",
+  name: 'dictionary',
   initialState,
   reducers: {},
   extraReducers: (builder) => {
@@ -39,19 +52,17 @@ const dictionarySlice = createSlice({
       })
       .addCase(searchWord.fulfilled, (state, action: PayloadAction<any>) => {
         state.loading = false;
-        state.word = action.payload[0].word;
-        state.definitions = action.payload[0].meanings;
-        state.searchHistory.unshift({
-          word: action.payload[0].word,
-          timestamp: Date.now(),
-        });
+        state.word = action.payload.word;
+        state.phonetics = action.payload.phonetics;
+        state.meanings = action.payload.meanings;
+        state.searchHistory.unshift({ word: action.payload.word, timestamp: Date.now() });
         if (state.searchHistory.length > 10) {
           state.searchHistory.pop();
         }
       })
       .addCase(searchWord.rejected, (state, action) => {
         state.loading = false;
-        state.error = action.error.message || "An error occured";
+        state.error = action.error.message || 'An error occurred';
       });
   },
 });
