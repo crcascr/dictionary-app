@@ -24,7 +24,7 @@ interface DictionaryState {
 }
 
 const initialState: DictionaryState = {
-  word: '',
+  word: "",
   phonetics: [],
   meanings: [],
   loading: false,
@@ -33,15 +33,17 @@ const initialState: DictionaryState = {
 };
 
 export const searchWord = createAsyncThunk(
-  'dictionary/searchWord',
+  "dictionary/searchWord",
   async (word: string) => {
-    const response = await axios.get(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`);
+    const response = await axios.get(
+      `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`
+    );
     return response.data[0]; // Assuming we're always using the first result
   }
 );
 
 const dictionarySlice = createSlice({
-  name: 'dictionary',
+  name: "dictionary",
   initialState,
   reducers: {},
   extraReducers: (builder) => {
@@ -55,14 +57,17 @@ const dictionarySlice = createSlice({
         state.word = action.payload.word;
         state.phonetics = action.payload.phonetics;
         state.meanings = action.payload.meanings;
-        state.searchHistory.unshift({ word: action.payload.word, timestamp: Date.now() });
+        state.searchHistory.unshift({
+          word: action.payload.word,
+          timestamp: Date.now(),
+        });
         if (state.searchHistory.length > 10) {
           state.searchHistory.pop();
         }
       })
       .addCase(searchWord.rejected, (state, action) => {
         state.loading = false;
-        state.error = action.error.message || 'An error occurred';
+        state.error = action.error.message || "An error occurred";
       });
   },
 });

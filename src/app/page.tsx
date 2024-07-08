@@ -19,16 +19,24 @@ export default function Home() {
     dispatch(searchWord("hello"));
   }, [dispatch]);
 
-  return(
+  return (
     <Layout>
       <div className="container mx-auto px-4 py-8">
         <h1 className="text-3xl font-bold mb-6">Dictionary App</h1>
         <SearchBar />
-        {loading && <p className="text-gray-600 dark:text-gray-400">Loading...</p>}
+        {loading && (
+          <p className="text-gray-600 dark:text-gray-400">Loading...</p>
+        )}
         {error && <p className="text-red-500">{error}</p>}
-        {word && <WordDefinition word={word} phonetics={phonetics} meanings={meanings} />}
+        {word && (
+          <WordDefinition
+            word={word}
+            phonetics={phonetics}
+            meanings={meanings}
+          />
+        )}
         <SearchHistory />
       </div>
     </Layout>
-  )
+  );
 }
