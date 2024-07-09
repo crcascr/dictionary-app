@@ -4,7 +4,7 @@ import { setThemeFromSystem } from "@/app/store/themeSlice";
 import { RootState } from "@/lib/redux";
 import ThemeToggle from "@/app/components/ThemeToggle";
 import FontSelector from "@/app/components/FontSelector";
-import { Book, History } from "lucide-react";
+import { BookMarked, History } from "lucide-react";
 import HistoryModal from "./HistoryModal";
 
 interface LayoutProps {
@@ -36,7 +36,10 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     >
       <header className="py-4 px-6 lg:px-[15rem] flex justify-between items-center bg-gray-100 dark:bg-gray-800">
         <div>
-          <Book className="w-8 h-8 text-gray-800 dark:text-white" />
+          <BookMarked
+            className="w-8 h-8 text-gray-500 dark:text-white"
+            strokeWidth={1}
+          />
         </div>
         <div className="flex items-center space-x-4">
           <button
