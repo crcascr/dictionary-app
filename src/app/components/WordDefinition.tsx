@@ -18,9 +18,6 @@ interface Meaning {
   antonyms?: string[];
 }
 
-interface Source {
-  sourceUrls: string[];
-}
 
 interface WordDefinitionProps {
   word: string;
