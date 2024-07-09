@@ -50,7 +50,7 @@ The deploy of this project is avalible at [Dictionary App](https://dictionary-ap
 
 ## Installation
 
-1. [Clone the repository](https://github.com/cristianoronaldo/dictionary-web-app)
+1. [Clone the repository](https://github.com/crcascr/dictionary-app)
 2. Browse to the project folder
    ```bash
     cd dictionary-app
