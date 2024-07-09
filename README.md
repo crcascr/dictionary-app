@@ -8,7 +8,7 @@ Developed as part of a technical test, it demonstrates skills in [Next.js](https
 
 ## Table of Contents
 
-- [Dictionay Web Application](#dictionay-web-application)
+- [Dictionary Web Application](#dictionay-web-application)
   - [Description](#description)
   - [Table of Contents](#table-of-contents)
   - [Technologies Used](#technologies-used)
