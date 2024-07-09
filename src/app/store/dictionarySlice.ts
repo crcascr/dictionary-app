@@ -14,10 +14,15 @@ interface Meaning {
   }[];
 }
 
+interface Source{
+  sourceUrls: string[]
+}
+
 interface DictionaryState {
   word: string;
   phonetics: Phonetic[];
   meanings: Meaning[];
+  sources: string[];
   loading: boolean;
   error: string | null;
   searchHistory: { word: string; timestamp: number }[];
@@ -27,6 +32,7 @@ const initialState: DictionaryState = {
   word: "",
   phonetics: [],
   meanings: [],
+  sources: [],
   loading: false,
   error: null,
   searchHistory: [],
@@ -57,6 +63,7 @@ const dictionarySlice = createSlice({
         state.word = action.payload.word;
         state.phonetics = action.payload.phonetics;
         state.meanings = action.payload.meanings;
+        state.sources = action.payload.sourceUrls
         state.searchHistory.unshift({
           word: action.payload.word,
           timestamp: Date.now(),

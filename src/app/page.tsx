@@ -7,11 +7,10 @@ import { searchWord } from "@/app/store/dictionarySlice";
 import Layout from "@/app/components/Layout";
 import SearchBar from "@/app/components/SearchBar";
 import WordDefinition from "@/app/components/WordDefinition";
-import SearchHistory from "@/app/components/SearchHistory";
 
 export default function Home() {
   const dispatch = useDispatch<AppDispatch>();
-  const { word, phonetics, meanings, loading, error } = useSelector(
+  const { word, phonetics, meanings, sources, loading, error } = useSelector(
     (state: RootState) => state.dictionary
   );
 
@@ -32,6 +31,7 @@ export default function Home() {
             word={word}
             phonetics={phonetics}
             meanings={meanings}
+            sources={sources}
           />
         )}
       </div>

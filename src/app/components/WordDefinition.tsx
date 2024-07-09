@@ -1,6 +1,7 @@
 import React from "react";
 import AudioPlayer from "@/app/components/AudioPlayer";
 import { capitalizeFirstLetter } from "@/app/utils/helpers";
+import { ExternalLink } from "lucide-react";
 
 interface Phonetic {
   text?: string;
@@ -17,23 +18,31 @@ interface Meaning {
   antonyms?: string[];
 }
 
+interface Source {
+  sourceUrls: string[];
+}
+
 interface WordDefinitionProps {
   word: string;
   phonetics: Phonetic[];
   meanings: Meaning[];
+  sources: string[];
 }
 
 const WordDefinition: React.FC<WordDefinitionProps> = ({
   word,
   phonetics,
   meanings,
+  sources,
 }) => {
   const audioUrl = phonetics.find((p) => p.audio)?.audio || "";
   return (
     <div className="mb-6">
       <div className="flex flex-row justify-between">
         <div className="flex flex-col">
-          <h2 className="text-6xl font-bold mb-2 dark:text-white">{word}</h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-2 dark:text-white">
+            {word}
+          </h2>
           <p className="text-purple-500 text-xl dark:text-purple-400 mb-2">
             {phonetics[0]?.text}
           </p>
@@ -82,6 +91,21 @@ const WordDefinition: React.FC<WordDefinitionProps> = ({
           )}
         </div>
       ))}
+      <div className="flex flex-row items-center">
+        <p className="text-gray-500 dark:text-gray-300 text-sm mr-4">Source</p>
+        {sources.map((source, index) => (
+          <a
+            key={index}
+            href={source}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-700 dark:text-gray-200 text-sm underline flex flex-row items-center"
+          >
+            {source}{" "}
+            <ExternalLink className="w-4 h-4 ml-2 text-gray-500 dark:text-gray-300" />
+          </a>
+        ))}
+      </div>
     </div>
   );
 };
