@@ -8,7 +8,7 @@ Developed as part of a technical test, it demonstrates skills in [Next.js](https
 
 ## Table of Contents
 
-- [Dictionary Web Application](#dictionay-web-application)
+- [Dictionary Web Application](#dictionary-web-application)
   - [Description](#description)
   - [Table of Contents](#table-of-contents)
   - [Technologies Used](#technologies-used)
@@ -149,3 +149,5 @@ Although this project was developed as part of an individual technical test, con
 - [Tailwind CSS](https://tailwindcss.com/) for the layout system used.
 - [Redux Toolkit](https://redux-toolkit.js.org) for simplifying state management.
 - [Next.js](https://nextjs.org) for the React framework used.
+- [TypeScript](https://www.typescriptlang.org) for the language used.
+- [Lucide](https://lucide.dev) for the icons used.
