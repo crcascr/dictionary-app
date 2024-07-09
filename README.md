@@ -2,9 +2,9 @@
 
 ## Description
 
-Esta aplicación web de diccionario permite a los usuarios buscar definiciones de palabras en inglés, ofreciendo pronunciación, significados, sinónimos y antónimos.
+This web-based dictionary application allows users to look up definitions of English words, offering pronunciation, meanings, synonyms and antonyms.
 
-Desarrollada como parte de una prueba técnica, demuestra habilidades en [Next.js](https://nextjs.org/), [React](https://reactjs.org/), [Redux](https://redux.js.org/), [TailwindCSS](https://tailwindcss.com/), y diseño responsivo.
+Developed as part of a technical test, it demonstrates skills in [Next.js](https://nextjs.org/), [React](https://reactjs.org/), [Redux](https://redux.js.org/), [TailwindCSS](https://tailwindcss.com/), and responsive design.
 
 ## Table of Contents
 
@@ -64,61 +64,63 @@ Desarrollada como parte de una prueba técnica, demuestra habilidades en [Next.j
 2. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## Project structure
+
 ```project-root/
 dictionary-app
-├─ public                            
-│  ├─ next.svg                       
-│  └─ vercel.svg                     
-├─ src                               
-│  ├─ app                            
-│  │  ├─ components                  
-│  │  │  ├─ AudioPlayer.tsx          
-│  │  │  ├─ FontSelector.tsx         
-│  │  │  ├─ HistoryModal.tsx         
-│  │  │  ├─ Layout.tsx               
-│  │  │  ├─ SearchBar.tsx            
-│  │  │  ├─ SearchHistory.tsx        
-│  │  │  ├─ ThemeToggle.tsx          
-│  │  │  └─ WordDefinition.tsx       
-│  │  ├─ pages                       
-│  │  ├─ store                       
-│  │  │  ├─ dictionarySlice.ts       
-│  │  │  ├─ fontSlice.ts             
-│  │  │  ├─ index.ts                 
-│  │  │  └─ themeSlice.ts            
-│  │  ├─ test                        
-│  │  │  ├─ FontSelector.test.tsx    
-│  │  │  └─ WordDefinition.test.tsx  
-│  │  ├─ utils                       
-│  │  │  └─ helpers.ts               
-│  │  ├─ favicon.ico                 
-│  │  ├─ globals.css                 
-│  │  ├─ layout.tsx                  
-│  │  ├─ page.tsx                    
-│  │  └─ setupTest.ts                
-│  ├─ lib                            
-│  │  └─ redux.ts                    
-│  └─ providers                      
-│     └─ ReduxProvider.tsx           
-├─ jest.config.js                    
-├─ next-env.d.ts                     
-├─ next.config.mjs                   
-├─ package-lock.json                 
-├─ package.json                      
-├─ postcss.config.mjs                
-├─ README.md                         
-├─ tailwind.config.ts                
-└─ tsconfig.json                     
+├─ public
+│  ├─ next.svg
+│  └─ vercel.svg
+├─ src
+│  ├─ app
+│  │  ├─ components
+│  │  │  ├─ AudioPlayer.tsx
+│  │  │  ├─ FontSelector.tsx
+│  │  │  ├─ HistoryModal.tsx
+│  │  │  ├─ Layout.tsx
+│  │  │  ├─ SearchBar.tsx
+│  │  │  ├─ SearchHistory.tsx
+│  │  │  ├─ ThemeToggle.tsx
+│  │  │  └─ WordDefinition.tsx
+│  │  ├─ pages
+│  │  ├─ store
+│  │  │  ├─ dictionarySlice.ts
+│  │  │  ├─ fontSlice.ts
+│  │  │  ├─ index.ts
+│  │  │  └─ themeSlice.ts
+│  │  ├─ test
+│  │  │  ├─ FontSelector.test.tsx
+│  │  │  └─ WordDefinition.test.tsx
+│  │  ├─ utils
+│  │  │  └─ helpers.ts
+│  │  ├─ favicon.ico
+│  │  ├─ globals.css
+│  │  ├─ layout.tsx
+│  │  ├─ page.tsx
+│  │  └─ setupTest.ts
+│  ├─ lib
+│  │  └─ redux.ts
+│  └─ providers
+│     └─ ReduxProvider.tsx
+├─ jest.config.js
+├─ next-env.d.ts
+├─ next.config.mjs
+├─ package-lock.json
+├─ package.json
+├─ postcss.config.mjs
+├─ README.md
+├─ tailwind.config.ts
+└─ tsconfig.json
 ```
 
-- ``` app/```:  It contains the main components and the application logic.
-- ``` components/```: It stores all reusable components.
-- ``` store/```: Contains the Redux configuration and slices.
-- ``` lib/```:Includes additional configurations and utilities.
-- ``` public/```:Publicly accessible static files.
-- ``` providers/```:Contains the Redux Provider component.
+- ` app/`: It contains the main components and the application logic.
+- ` components/`: It stores all reusable components.
+- ` store/`: Contains the Redux configuration and slices.
+- ` lib/`:Includes additional configurations and utilities.
+- ` public/`:Publicly accessible static files.
+- ` providers/`:Contains the Redux Provider component.
 
 ## Testing
+
 To run the application tests:
 
 ```bash
@@ -136,9 +138,9 @@ This project uses Jest for unit testing and React Testing Library for component 
 Although this project was developed as part of an individual technical test, contributions are welcome. If you wish to contribute:
 
 1. Fork the repository
-2. Create a new branch (```git checkout -b feature/AmazingFeature```)
-3. Commit your changes (```git commit -m 'Add some AmazingFeature'```)
-4. Push to the branch (```git push origin feature/AmazingFeature```)
+2. Create a new branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
 ## Acknowledgements
