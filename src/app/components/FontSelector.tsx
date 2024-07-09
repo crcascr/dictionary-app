@@ -8,8 +8,8 @@ const FontSelector: React.FC = () => {
   const currentFont = useSelector((state: RootState) => state.font.currentFont);
 
   const fonts = [
-    { name: "Serif", value: "serif" },
     { name: "Sans-Serif", value: "sans" },
+    { name: "Serif", value: "serif" },
     { name: "Monospace", value: "mono" },
   ];
 
