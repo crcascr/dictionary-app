@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useRef } from "react";
+import { Play, Pause } from "lucide-react";
 
 interface AudioPlayerProps {
   audioUrl: string;
@@ -25,9 +26,13 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ audioUrl }) => {
     <div className="mt-2 mb-4">
       <button
         onClick={togglePlay}
-        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+        className="bg-purple-200 dark:bg-purple-900 hover:bg-purple-300 dark:hover:bg-purple-800 transition-colors text-purple-500 dark:text-purple-300 p-4 rounded-full"
       >
-        {isPlaying ? "Pause" : "Play"} Pronunciation
+        {isPlaying ? (
+          <Pause className="h-6 w-6" fill="currentColor" />
+        ) : (
+          <Play className="h-6 w-6" fill="currentColor" />
+        )}
       </button>
       <audio
         ref={audioRef}

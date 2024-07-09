@@ -4,6 +4,7 @@ import { setThemeFromSystem } from "@/app/store/themeSlice";
 import { RootState } from "@/lib/redux";
 import ThemeToggle from "@/app/components/ThemeToggle";
 import FontSelector from "@/app/components/FontSelector";
+import { Book } from "lucide-react";
 
 interface LayoutProps {
   children: ReactNode;
@@ -30,10 +31,10 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     <div
       className={`min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300 font-${currentFont}`}
     >
-      <header className="py-4 px-6 flex justify-between items-center bg-gray-100 dark:bg-gray-800">
-        <h1 className="text-2xl font-bold text-gray-800 dark:text-white">
-          Dictionary
-        </h1>
+      <header className="py-4 px-6 lg:px-[15rem] flex justify-between items-center bg-gray-100 dark:bg-gray-800">
+        <div>
+          <Book className="w-8 h-8 text-gray-800 dark:text-white" />
+        </div>
         <div className="flex items-center space-x-4">
           <FontSelector />
           <ThemeToggle />

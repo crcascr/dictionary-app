@@ -12,6 +12,8 @@ interface Meaning {
     definition: string;
     example?: string;
   }[];
+  synonyms?: string[];
+  antonyms?: string[];
 }
 
 interface WordDefinitionProps {
@@ -28,31 +30,55 @@ const WordDefinition: React.FC<WordDefinitionProps> = ({
   const audioUrl = phonetics.find((p) => p.audio)?.audio || "";
   return (
     <div className="mb-6">
-      <h2 className="text-2xl font-bold mb-2">{word}</h2>
-      {audioUrl && <AudioPlayer audioUrl={audioUrl} />}
-      {phonetics.map(
-        (phonetic, index) =>
-          phonetic.text && (
-            <p key={index} className="text-gray-600 dark:text-gray-400 mb-2">
-              {phonetic.text}
-            </p>
-          )
-      )}
+      <div className="flex flex-row justify-between">
+        <div className="flex flex-col">
+          <h2 className="text-6xl font-bold mb-2 dark:text-white">{word}</h2>
+          <p className="text-purple-500 text-xl dark:text-purple-400 mb-2">
+            {phonetics[0]?.text}
+          </p>
+        </div>
+        {audioUrl && <AudioPlayer audioUrl={audioUrl} />}
+      </div>
       {meanings.map((meaning, index) => (
         <div key={index} className="mb-4">
-          <h3 className="text-xl font-semibold mb-2">{meaning.partOfSpeech}</h3>
-          <ol className="list-decimal list-inside">
+          <h3 className="text-xl italic font-semibold mt-6 mb-6 text-gray-800 dark:text-white">
+            {meaning.partOfSpeech}
+          </h3>
+          <p className="text-gray-500 text-lg dark:text-gray-300 mb-4">
+            Meaning
+          </p>
+          <ol className="list-disc list-inside pl-4 marker:text-purple-600 dark:marker:text-purple-400">
             {meaning.definitions.map((def, i) => (
-              <li key={i} className="mb-2">
+              <li key={i} className="mb-2 text-black dark:text-white">
                 {def.definition}
                 {def.example && (
                   <p className="text-gray-600 dark:text-gray-400 ml-4">
-                    Example: {def.example}
+                    "{def.example}"
                   </p>
                 )}
               </li>
             ))}
           </ol>
+          {meaning.synonyms && meaning.synonyms.length > 0 && (
+            <div className="mt-4 flex items-center mb-2">
+              <p className="text-gray-500 text-lg dark:text-gray-300">
+                Synonyms:
+              </p>
+              <p className="text-purple-500 text-lg ml-4 font-semibold dark:text-purple-400">
+                {meaning.synonyms.join(", ")}
+              </p>
+            </div>
+          )}
+          {meaning.antonyms && meaning.antonyms.length > 0 && (
+            <div className="mt-4 flex items-center mb-2">
+              <p className="text-gray-500 text-lg dark:text-gray-300">
+                Antonyms:
+              </p>
+              <p className="text-purple-500 text-lg ml-4 font-semibold dark:text-purple-400">
+                {meaning.antonyms.join(", ")}
+              </p>
+            </div>
+          )}
         </div>
       ))}
     </div>
