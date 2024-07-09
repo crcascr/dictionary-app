@@ -6,10 +6,15 @@ This web-based dictionary application allows users to look up definitions of Eng
 
 Developed as part of a technical test, it demonstrates skills in [Next.js](https://nextjs.org/), [React](https://reactjs.org/), [Redux](https://redux.js.org/), [TailwindCSS](https://tailwindcss.com/), and responsive design.
 
+## Production Deploy
+
+The deploy of this project is avalible at [Dictionary App](https://dictionary-app-eta-seven.vercel.app/).
+
 ## Table of Contents
 
 - [Dictionary Web Application](#dictionary-web-application)
   - [Description](#description)
+  - [Production Deploy](#production-deploy)
   - [Table of Contents](#table-of-contents)
   - [Technologies Used](#technologies-used)
   - [Main Features](#main-features)
