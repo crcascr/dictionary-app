@@ -56,11 +56,11 @@ const SearchBar: React.FC = () => {
           value={searchTerm}
           onChange={handleInputChange}
           placeholder="Enter a word..."
-          className="flex-grow font-bold p-2 bg-purple-50 dark:bg-purple-900 border border-purple-200 dark:border-purple-700 rounded-l-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent dark:text-white placeholder-purple-400 dark:placeholder-purple-300"
+          className="flex-grow font-bold p-2 bg-purple-50 dark:bg-purple-900 border border-purple-200 dark:border-purple-700 rounded-l-xl focus:ring-2 focus:outline-none focus:ring-purple-500 focus:border-transparent dark:text-white placeholder-purple-400 dark:placeholder-purple-300"
         />
         <button
           type="submit"
-          className="bg-purple-200 dark:bg-purple-700 hover:bg-purple-300 dark:hover:bg-purple-600 transition-colors text-purple-700 dark:text-purple-100 px-4 py-2 rounded-r-xl border border-purple-200 dark:border-purple-700"
+          className="bg-purple-200 dark:bg-purple-700 hover:bg-purple-300 dark:hover:bg-purple-600 transition-colors text-purple-700 dark:text-purple-100 px-4 py-2 rounded-r-xl border border-purple-200 dark:border-purple-700 focus:ring-2 focus:outline-none focus:ring-purple-500"
         >
           <Search className="h-5 w-5" />
         </button>

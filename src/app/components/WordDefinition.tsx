@@ -53,7 +53,7 @@ const WordDefinition: React.FC<WordDefinitionProps> = ({
               <li key={i} className="mb-2 text-black dark:text-white">
                 {def.definition}
                 {def.example && (
-                  <p className="text-gray-600 dark:text-gray-400 ml-4">
+                  <p className="text-gray-600 dark:text-gray-400 ml-5 mt-1">
                     "{def.example}"
                   </p>
                 )}

@@ -34,7 +34,6 @@ export default function Home() {
             meanings={meanings}
           />
         )}
-        <SearchHistory />
       </div>
     </Layout>
   );

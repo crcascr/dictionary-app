@@ -17,7 +17,7 @@ const FontSelector: React.FC = () => {
     <select
       value={currentFont}
       onChange={handleFontChange}
-      className="p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+      className="p-2 border border-gray-300 rounded-xl focus:ring-2 focus:outline-none focus:ring-purple-500"
     >
       {fonts.map((font) => (
         <option key={font} value={font}>

@@ -9,15 +9,18 @@ const SearchHistory: React.FC = () => {
 
   return (
     <div className="mt-6">
-      <h3 className="text-xl font-bold mb-2">Search History</h3>
       {searchHistory.length === 0 ? (
-        <p>No search history yet.</p>
+        <p className="text-gray-600 dark:text-gray-400">
+          No search history yet.
+        </p>
       ) : (
-        <ul className="list-disc list-inside">
+        <ul className="list-disc list-inside marker:text-purple-600 dark:marker:text-purple-400">
           {searchHistory.map((item, index) => (
-            <li key={index} className="mb-2">
-              <span className="font-semibold">{item.word}</span> -{" "}
-              {new Date(item.timestamp).toLocaleString()}
+            <li key={index} className="mb-2 text-gray-600 dark:text-gray-400">
+              <span className="font-semibold text-black dark:text-white">
+                {item.word}
+              </span>{" "}
+              - {new Date(item.timestamp).toLocaleString()}
             </li>
           ))}
         </ul>

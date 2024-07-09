@@ -26,7 +26,7 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ audioUrl }) => {
     <div className="mt-2 mb-4">
       <button
         onClick={togglePlay}
-        className="bg-purple-200 dark:bg-purple-900 hover:bg-purple-300 dark:hover:bg-purple-800 transition-colors text-purple-500 dark:text-purple-300 p-4 rounded-full"
+        className="bg-purple-200 dark:bg-purple-900 hover:bg-purple-300 dark:hover:bg-purple-800 transition-colors text-purple-500 dark:text-purple-300 p-4 rounded-full focus:ring-2 focus:outline-none focus:ring-purple-500"
       >
         {isPlaying ? (
           <Pause className="h-6 w-6" fill="currentColor" />
