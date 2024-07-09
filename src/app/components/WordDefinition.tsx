@@ -1,5 +1,6 @@
 import React from "react";
 import AudioPlayer from "@/app/components/AudioPlayer";
+import { capitalizeFirstLetter } from "@/app/utils/helpers";
 
 interface Phonetic {
   text?: string;
@@ -40,9 +41,9 @@ const WordDefinition: React.FC<WordDefinitionProps> = ({
         {audioUrl && <AudioPlayer audioUrl={audioUrl} />}
       </div>
       {meanings.map((meaning, index) => (
-        <div key={index} className="mb-4">
-          <h3 className="text-xl italic font-semibold mt-6 mb-6 text-gray-800 dark:text-white">
-            {meaning.partOfSpeech}
+        <div key={index} className="pt-5 mb-7">
+          <h3 className="text-xl italic font-semibold mb-6 text-gray-800 dark:text-white">
+            {capitalizeFirstLetter(meaning.partOfSpeech)}
           </h3>
           <p className="text-gray-500 text-lg dark:text-gray-300 mb-4">
             Meaning
