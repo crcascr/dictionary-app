@@ -1,4 +1,4 @@
-# Dictionay Web Application
+# Dictionary Web Application
 
 ## Description
 
